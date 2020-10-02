@@ -1,0 +1,27 @@
+<div class="container w-100 h-100">
+  <div class="h-100 d-flex justify-content-center align-items-center">
+    <mat-card class="example-card">
+      <form [formGroup]="form" (submit)="login()">
+        <mat-card-header>
+          <mat-card-title>Welcome to facebook</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field class="w-100">
+              <mat-label>Username</mat-label>
+              <input matInput formControlName="username" placeholder="Enter username">
+              <mat-error *ngIf="!isFormValid()">This field is required</mat-error>
+            </mat-form-field>
+          
+            <mat-form-field class="w-100">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" placeholder="Enter password">
+              <mat-error *ngIf="form.get('password').invalid">This field is required</mat-error>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions class="d-flex justify-content-end">
+          <button mat-raised-button color="primary">Login</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>
